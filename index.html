@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GovAssist AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <button class="btn btn-icon" id="historyToggleBtn" aria-label="Toggle history sidebar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </button>
+      </div>
+      <div class="header-brand">
+        <span class="header-dot"></span>
+        <div>
+          <h1 class="header-title">GovAssist AI</h1>
+          <p class="header-subtitle">Your Indian Government Schemes Guide</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <button class="btn btn-icon" id="themeToggleBtn" aria-label="Toggle dark mode">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sun-icon"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="moon-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <div class="language-selector">
+          <button class="btn btn-outline btn-language" id="languageToggleBtn" aria-label="Toggle language">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
+            <span id="languageLabel">EN</span>
+          </button>
+          <div class="language-dropdown" id="languageDropdown">
+            <button class="language-option" data-lang="en">English</button>
+            <button class="language-option" data-lang="hi">हिंदी</button>
+          </div>
+        </div>
+        <button class="btn btn-outline btn-new-chat" id="newChatBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span class="btn-text" data-i18n="header.newChat">New Chat</span>
+        </button>
+        <button class="btn btn-outline" id="profileBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+          <span class="btn-text" data-i18n="header.profile">Profile</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- History Sidebar -->
+    <div class="history-sidebar" id="historySidebar">
+      <div class="history-header">
+        <div class="history-header-top">
+          <h2 class="history-title" data-i18n="history.title">Chat History</h2>
+          <button class="close-btn" id="closeHistorySidebar" aria-label="Close history sidebar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <button class="btn btn-small btn-danger" id="deleteAllHistoryBtn" data-i18n="history.deleteAll" style="margin-top: 8px; width: 100%;">Delete All</button>
+      </div>
+      <div class="history-list" id="historyList">
+        <p class="history-empty" data-i18n="history.empty">No chat history yet</p>
+      </div>
+    </div>
+
+    <!-- History Overlay (for mobile) -->
+    <div class="history-overlay" id="historyOverlay"></div>
+
+    <!-- Chat Window -->
+    <div class="chat-window" id="chatWindow">
+      <!-- Empty State -->
+      <div class="empty-state" id="emptyState">
+        <div class="empty-state-icon">🏛️</div>
+        <h2 class="empty-state-title" data-i18n="chat.emptyTitle">Welcome to GovAssist AI</h2>
+        <p class="empty-state-subtitle" data-i18n="chat.emptySubtitle">Your smart guide to Indian government schemes</p>
+        <div class="suggested-questions">
+          <p class="suggested-label" data-i18n="chat.tryAsking">Try asking:</p>
+          <button class="suggestion-btn" data-question-key="chat.farmerSchemes" data-question="What schemes are available for farmers?">🌾 Schemes for farmers</button>
+          <button class="suggestion-btn" data-question-key="chat.healthSchemes" data-question="What health benefits am I eligible for?">💊 Health schemes</button>
+          <button class="suggestion-btn" data-question-key="chat.housingAssistance" data-question="Tell me about housing schemes">🏠 Housing assistance</button>
+          <button class="suggestion-btn" data-question-key="chat.educationSupport" data-question="What education schemes are available?">📚 Education support</button>
+        </div>
+      </div>
+      <div class="messages" id="messages"></div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-area">
+      <div class="input-area-inner">
+        <div class="topic-chips" id="topicChips"></div>
+        <div class="input-row">
+          <input
+            type="text"
+            class="chat-input"
+            id="chatInput"
+            placeholder="Ask about schemes, eligibility, or benefits..."
+            autocomplete="off"
+            data-i18n="chat.placeholder"
+          />
+          <button class="btn btn-mic" id="micBtn" aria-label="Start speech recognition" title="Click to speak">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </button>
+          <button class="btn btn-send" id="sendBtn" aria-label="Send message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </div>
+        <p class="disclaimer" data-i18n="chat.disclaimer">GovAssist AI can make mistakes. Always verify information on official government websites.</p>
+      </div>
+    </div>
+
+    <!-- Profile Panel (Sidebar) -->
+    <div class="overlay" id="overlay"></div>
+    <div class="profile-panel" id="profilePanel">
+      <div class="profile-header">
+        <h2 class="profile-title" data-i18n="profile.title">Your Profile</h2>
+        <button class="close-btn" id="closeProfile" aria-label="Close profile panel">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <p class="profile-desc" data-i18n="profile.description">Providing your details helps GovAssist AI find schemes you're eligible for more accurately.</p>
+      <div class="form-group">
+        <label class="form-label" for="profileName" data-i18n="profile.name">Full Name</label>
+        <input class="form-input" type="text" id="profileName" placeholder="e.g. Ramesh Kumar" data-i18n="profile.namePlaceholder" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="profileAge" data-i18n="profile.age">Age</label>
+        <input class="form-input" type="number" id="profileAge" placeholder="e.g. 35" min="0" max="120" data-i18n="profile.agePlaceholder" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="profileIncome" data-i18n="profile.income">Annual Income (&#8377;)</label>
+        <input class="form-input" type="number" id="profileIncome" placeholder="e.g. 150000" min="0" data-i18n="profile.incomePlaceholder" />
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="profileOccupation" data-i18n="profile.occupation">Occupation</label>
+        <select class="form-input" id="profileOccupation">
+          <option value="" data-i18n="profile.occupationPlaceholder">Select occupation</option>
+          <option value="farmer" data-i18n="profile.farmer">Farmer / Agriculture</option>
+          <option value="laborer" data-i18n="profile.laborer">Laborer / Daily Wage</option>
+          <option value="student" data-i18n="profile.student">Student</option>
+          <option value="salaried" data-i18n="profile.salaried">Salaried Employee</option>
+          <option value="business" data-i18n="profile.business">Self-Employed / Business</option>
+          <option value="unemployed" data-i18n="profile.unemployed">Unemployed</option>
+          <option value="other" data-i18n="profile.other">Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="profileState">State</label>
+        <select class="form-input" id="profileState">
+          <option value="">Select state</option>
+          <option value="andhra pradesh">Andhra Pradesh</option>
+          <option value="arunachal pradesh">Arunachal Pradesh</option>
+          <option value="assam">Assam</option>
+          <option value="bihar">Bihar</option>
+          <option value="chhattisgarh">Chhattisgarh</option>
+          <option value="goa">Goa</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="haryana">Haryana</option>
+          <option value="himachal pradesh">Himachal Pradesh</option>
+          <option value="jharkhand">Jharkhand</option>
+          <option value="karnataka">Karnataka</option>
+          <option value="kerala">Kerala</option>
+          <option value="madhya pradesh">Madhya Pradesh</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="manipur">Manipur</option>
+          <option value="meghalaya">Meghalaya</option>
+          <option value="mizoram">Mizoram</option>
+          <option value="nagaland">Nagaland</option>
+          <option value="odisha">Odisha</option>
+          <option value="punjab">Punjab</option>
+          <option value="rajasthan">Rajasthan</option>
+          <option value="sikkim">Sikkim</option>
+          <option value="tamil nadu">Tamil Nadu</option>
+          <option value="telangana">Telangana</option>
+          <option value="tripura">Tripura</option>
+          <option value="uttar pradesh">Uttar Pradesh</option>
+          <option value="uttarakhand">Uttarakhand</option>
+          <option value="west bengal">West Bengal</option>
+          <option value="delhi">Delhi</option>
+          <option value="jammu and kashmir">Jammu and Kashmir</option>
+          <option value="ladakh">Ladakh</option>
+          <option value="puducherry">Puducherry</option>
+          <option value="chandigarh">Chandigarh</option>
+          <option value="andaman and nicobar islands">Andaman and Nicobar Islands</option>
+          <option value="dadra and nagar haveli and daman and diu">Dadra and Nagar Haveli and Daman and Diu</option>
+          <option value="lakshadweep">Lakshadweep</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-full" id="saveProfile" data-i18n="profile.saveBtn">Save &amp; Continue</button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+      <span id="toastMessage"></span>
+    </div>
+
+    <script src="/translations.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>

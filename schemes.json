@@ -1,0 +1,154 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": "PM-KISAN (Pradhan Mantri Kisan Samman Nidhi)",
+    "description": "A Central Sector scheme that provides income support of Rs. 6,000 per year to all land-holding farmer families. The amount is paid in three equal installments of Rs. 2,000 directly to the bank accounts of the beneficiaries.",
+    "category": "agriculture",
+    "eligibility": {
+      "maxIncome": 200000,
+      "occupations": ["farmer", "agriculture"],
+      "minAge": 18
+    },
+    "benefits": "Rs. 6,000 per year (Rs. 2,000 every 4 months) direct bank transfer for agricultural needs.",
+    "applicationUrl": "https://pmkisan.gov.in/",
+    "documents": ["Aadhaar Card", "Land ownership documents", "Bank account details"],
+    "keywords": ["farmer", "kisan", "agriculture", "farming", "crop", "land", "farm", "rural"]
+  },
+  {
+    "id": "ayushman-bharat",
+    "name": "Ayushman Bharat PM-JAY (Pradhan Mantri Jan Arogya Yojana)",
+    "description": "The world's largest government-funded health insurance scheme providing health coverage of Rs. 5 lakh per family per year for secondary and tertiary care hospitalization to poor and vulnerable families.",
+    "category": "health",
+    "eligibility": {
+      "maxIncome": 250000,
+      "occupations": [],
+      "minAge": 0
+    },
+    "benefits": "Rs. 5 lakh per family per year for hospitalization. Covers pre and post hospitalization expenses, day care surgeries.",
+    "applicationUrl": "https://pmjay.gov.in/",
+    "documents": ["Aadhaar Card", "Ration Card", "Income Certificate"],
+    "keywords": ["health", "hospital", "medical", "treatment", "insurance", "disease", "medicine", "surgery", "doctor", "illness", "sick"]
+  },
+  {
+    "id": "pm-awas-yojana",
+    "name": "PMAY (Pradhan Mantri Awas Yojana)",
+    "description": "A government initiative to provide affordable housing to the urban and rural poor. Beneficiaries get financial assistance to construct or enhance their homes, with interest subsidy on home loans.",
+    "category": "housing",
+    "eligibility": {
+      "maxIncome": 600000,
+      "occupations": [],
+      "minAge": 18
+    },
+    "benefits": "Subsidy on home loans up to Rs. 2.67 lakh. Direct financial assistance for house construction/renovation.",
+    "applicationUrl": "https://pmaymis.gov.in/",
+    "documents": ["Aadhaar Card", "Income Certificate", "Land documents", "Bank account details"],
+    "keywords": ["house", "home", "housing", "shelter", "accommodation", "loan", "construction", "building", "flat", "rent", "property", "awas"]
+  },
+  {
+    "id": "pm-mudra-yojana",
+    "name": "PMMY (Pradhan Mantri MUDRA Yojana)",
+    "description": "Provides loans up to Rs. 10 lakh to non-corporate, non-farm small/micro enterprises to help them grow their businesses. Loans are provided through commercial banks, RRBs, and microfinance institutions.",
+    "category": "finance",
+    "eligibility": {
+      "maxIncome": 1000000,
+      "occupations": ["business", "self-employed", "entrepreneur", "shopkeeper"],
+      "minAge": 18
+    },
+    "benefits": "Collateral-free loans: Shishu (up to Rs. 50,000), Kishore (Rs. 50,001-5 lakh), Tarun (Rs. 5-10 lakh).",
+    "applicationUrl": "https://www.mudra.org.in/",
+    "documents": ["Aadhaar Card", "Business plan", "Identity proof", "Bank statements"],
+    "keywords": ["loan", "business", "mudra", "entrepreneur", "startup", "shop", "micro enterprise", "self employed", "finance"]
+  },
+  {
+    "id": "nrega",
+    "name": "MGNREGA (Mahatma Gandhi National Rural Employment Guarantee Act)",
+    "description": "Guarantees 100 days of wage employment in a financial year to any rural household whose adult members volunteer to do unskilled manual work. Promotes sustainable development and strengthens rural livelihoods.",
+    "category": "employment",
+    "eligibility": {
+      "maxIncome": 150000,
+      "occupations": ["laborer", "unemployed", "rural"],
+      "minAge": 18
+    },
+    "benefits": "100 days of guaranteed employment per year at minimum wages. Unemployment allowance if work not provided within 15 days.",
+    "applicationUrl": "https://nrega.nic.in/",
+    "documents": ["Aadhaar Card", "Job Card", "Bank account details"],
+    "keywords": ["employment", "job", "work", "labour", "labor", "rural", "wage", "nrega", "mgnrega", "unemployed"]
+  },
+  {
+    "id": "pm-scholarship",
+    "name": "PM Scholarship Scheme",
+    "description": "Provides scholarships to encourage technical education for wards of ex-servicemen and widows of ex-servicemen. Also covers students pursuing professional degree programs. Promotes higher education among economically backward students.",
+    "category": "education",
+    "eligibility": {
+      "maxIncome": 600000,
+      "occupations": ["student"],
+      "minAge": 18,
+      "maxAge": 30
+    },
+    "benefits": "Rs. 25,000 per year for boys and Rs. 30,000 per year for girls pursuing professional degree programs.",
+    "applicationUrl": "https://scholarships.gov.in/",
+    "documents": ["Aadhaar Card", "10th/12th Mark sheets", "Income Certificate", "Bank account details"],
+    "keywords": ["education", "student", "scholarship", "study", "school", "college", "university", "degree", "fees", "learning"]
+  },
+  {
+    "id": "jan-dhan",
+    "name": "PMJDY (Pradhan Mantri Jan Dhan Yojana)",
+    "description": "A national mission for financial inclusion to ensure access to financial services for all households across the country. Provides a basic savings bank account with RuPay debit card, accident insurance, and overdraft facility.",
+    "category": "finance",
+    "eligibility": {
+      "maxIncome": 200000,
+      "occupations": [],
+      "minAge": 10
+    },
+    "benefits": "Zero balance savings account, RuPay debit card, Rs. 2 lakh accident insurance, Rs. 30,000 life insurance, overdraft facility up to Rs. 10,000.",
+    "applicationUrl": "https://pmjdy.gov.in/",
+    "documents": ["Aadhaar Card", "Address proof", "Passport photo"],
+    "keywords": ["bank", "account", "banking", "jan dhan", "savings", "financial", "insurance", "debit card"]
+  },
+  {
+    "id": "karnataka-rythu-bandhu",
+    "name": "Karnataka Rythu Bandhu Scheme",
+    "description": "Provides financial assistance to farmers in Karnataka for crop cultivation. The scheme offers Rs. 10,000 per acre per year to help with farming expenses.",
+    "category": "agriculture",
+    "eligibility": {
+      "occupations": ["farmer"],
+      "minAge": 18
+    },
+    "benefits": "Rs. 10,000 per acre per year for farming expenses.",
+    "applicationUrl": "https://raitamitra.karnataka.gov.in/",
+    "documents": ["Aadhaar Card", "Land documents", "Bank account details"],
+    "keywords": ["farmer", "karnataka", "rythu", "bandhu", "agriculture", "farming"],
+    "state": "karnataka"
+  },
+  {
+    "id": "maharashtra-agri-loan",
+    "name": "Maharashtra Agriculture Loan Waiver Scheme",
+    "description": "Waives outstanding loans for farmers in Maharashtra who have loans up to Rs. 1 lakh. Helps alleviate debt burden on small and marginal farmers.",
+    "category": "agriculture",
+    "eligibility": {
+      "maxIncome": 200000,
+      "occupations": ["farmer"],
+      "minAge": 18
+    },
+    "benefits": "Waiver of loans up to Rs. 1 lakh for eligible farmers.",
+    "applicationUrl": "https://mahadbtmahait.gov.in/",
+    "documents": ["Aadhaar Card", "Loan documents", "Bank account details"],
+    "keywords": ["farmer", "maharashtra", "loan", "waiver", "agriculture"],
+    "state": "maharashtra"
+  },
+  {
+    "id": "tamil-nadu-health-insurance",
+    "name": "Tamil Nadu Chief Minister's Comprehensive Health Insurance Scheme",
+    "description": "Provides health insurance coverage to families in Tamil Nadu. Covers hospitalization expenses up to Rs. 4 lakh per family per year.",
+    "category": "health",
+    "eligibility": {
+      "occupations": [],
+      "minAge": 0
+    },
+    "benefits": "Health insurance coverage up to Rs. 4 lakh per family per year.",
+    "applicationUrl": "https://www.cmchistn.com/",
+    "documents": ["Aadhaar Card", "Ration Card", "Bank account details"],
+    "keywords": ["health", "tamil nadu", "insurance", "hospital", "medical"],
+    "state": "tamil nadu"
+  }
+]
