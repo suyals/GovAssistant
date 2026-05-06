@@ -18,3 +18,5 @@ app.get("/", (_req, res) => {
 app.listen(port, () => {
   console.log(`GovAssist AI server listening on http://localhost:${port}`);
 });
+
+export default app;
